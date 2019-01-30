@@ -1,9 +1,7 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { render } from 'react-dom';
 import asyncComponent from "./asyncComponent";
 import LoadingComponent from "./LoadingComponent";
-import Product from "./components/Product";
-
 
 // router
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
@@ -12,6 +10,8 @@ import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom
 
 /* Import Components */
 const AsyncProfile = asyncComponent(() => import("./components/Profile"), LoadingComponent);
+const AsyncProduct = asyncComponent(() => import("./components/Product"), LoadingComponent);
+
 
 import "../assets/style.css";
 
@@ -20,7 +20,7 @@ const App = () => (
     <div>
 		<Switch>
 			<Route exact path="/" component={AsyncProfile}/>
-			<Route path="/product/:id" component={Product}/>
+			<Route path="/product/:id" component={AsyncProduct}/>
 		</Switch>
     </div>
   </Router>

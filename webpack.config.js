@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: __dirname + '/public',
 	chunkFilename: '[name].js',
-    filename: '[name].js'
+    filename: '[name].js',
+	publicPath: '/'
   },
   optimization: {
     splitChunks: {

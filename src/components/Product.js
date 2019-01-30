@@ -14,7 +14,6 @@ class Product extends React.Component {
 		  .then(res => {
 			if(res.status === 200) {
 				this.setState({profile: res.data.orders[this.props.match.params.id]});
-				console.log(res.data);
 			}
 		  })
 	}

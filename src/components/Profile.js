@@ -16,7 +16,6 @@ class Profile extends React.Component {
 		  .then(res => {
 			if(res.status === 200) {
 				this.setState({profile: res.data});
-				console.log(res.data);
 			}
 		  })
 	}
